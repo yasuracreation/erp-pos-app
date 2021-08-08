@@ -1,4 +1,4 @@
-# ErpPos
+# Erp Pos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
@@ -12,11 +12,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory , can use indipendent build among all the project seperately .
+Run `npm run build:apps ` that will build all the projects and store in dist folder 
+Run `nmp run build:release` that will run test automatically and run project buids with library's 
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:all test all projects` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run get:report that will generate testing report and start http-server related to the resting summery html `
+
+
 
 ## Running end-to-end tests
 
