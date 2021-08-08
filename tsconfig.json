@@ -12,7 +12,18 @@
         "dist/components-lib/components-lib",
         "dist/components-lib"
       ],
-      "header-lib": ["dist/header-lib/header-lib", "dist/header-lib"]
+      "cor-lib": [
+        "dist/cor-lib/cor-lib",
+        "dist/cor-lib"
+      ],
+      "header-lib": [
+        "dist/header-lib/header-lib",
+        "dist/header-lib"
+      ],
+      "shared-lib": [
+        "dist/shared-lib/shared-lib",
+        "dist/shared-lib"
+      ]
     },
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

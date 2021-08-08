@@ -8,10 +8,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:libs": "ng build header-lib",
-    "build:apps": "ng build erp-sales-pos",
+    "build:libs": "ng build header-lib &&  ng build cor-lib && ng build components-lib",
+    "build:apps": "ng build erp-sales-pos && ng build erp-restaurants-pos",
+    "build:release":"npm run test:all && npm run build:libs && npm run build:apps",
     "lint": "ng lint",
-    "test:all": "ng test header-lib --code-coverage && ng test erp-sales-pos --code-coverage && node ./scripts/merge-reports.js"
+    "test:all": "ng test header-lib --code-coverage && ng test cor-lib --code-coverage && ng test components-lib --code-coverage  && ng test erp-restaurants-pos --code-coverage ",
+    "get:report":"node ./scripts/merge-reports.js && http-server "
   },
   "private": true,
   "dependencies": {

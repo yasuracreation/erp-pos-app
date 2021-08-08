@@ -28,7 +28,7 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, '../../coverage/components-lib'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
+        { type: 'json' },
         { type: 'text-summary' }
       ]
     },
@@ -38,7 +38,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true
   });
 };
