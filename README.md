@@ -19,7 +19,8 @@ Run `nmp run build:release` that will run test automatically and run project bui
 ## Running unit tests
 
 Run `npm run test:all test all projects` to execute the unit tests via [Karma](https://karma-runner.github.io).
-Run `npm run get:report that will generate testing report and start http-server related to the resting summery html `
+
+Run `npm run get:report that will generate testing report and start http-server related to the testing summery html `
 
 
 
