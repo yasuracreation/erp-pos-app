@@ -8,6 +8,10 @@
     "strict": true,
     "noImplicitReturns": true,
     "paths": {
+      "components-lib": [
+        "dist/components-lib/components-lib",
+        "dist/components-lib"
+      ],
       "header-lib": ["dist/header-lib/header-lib", "dist/header-lib"]
     },
     "noFallthroughCasesInSwitch": true,
