@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'erp-header-lib',
-  template: ` <p>header-lib works!</p> `,
+  templateUrl: './header-lib.component.html',
   styles: []
 })
 export class HeaderLibComponent implements OnInit {

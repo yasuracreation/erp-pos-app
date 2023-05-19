@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderLibModule } from 'header-lib';
+import { LoginComponent } from './layout/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HeaderLibModule],
+  declarations: [AppComponent,LoginComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

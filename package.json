@@ -10,10 +10,10 @@
     "test": "ng test",
     "build:libs": "ng build header-lib &&  ng build cor-lib && ng build components-lib",
     "build:apps": "ng build erp-sales-pos && ng build erp-restaurants-pos",
-    "build:release":"npm run test:all && npm run build:libs && npm run build:apps",
+    "build:release": "npm run test:all && npm run build:libs && npm run build:apps",
     "lint": "ng lint",
     "test:all": "ng test header-lib --code-coverage && ng test cor-lib --code-coverage && ng test components-lib --code-coverage  && ng test erp-restaurants-pos --code-coverage ",
-    "get:report":"node ./scripts/merge-reports.js && http-server "
+    "get:report": "node ./scripts/merge-reports.js && http-server "
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
     "@schuchard/prettier": "^5.1.0",
+    "axios": "^1.4.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
