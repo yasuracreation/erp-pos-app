@@ -1,35 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-// .header {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 10px;
-//   background-color: #f2f2f2;
-// }
 
-// .logo {
-//   width: 80px;
-// }
-
-// .actions {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .button {
-//   margin-left: 10px;
-// }
-
-// .user-details {
-//   display: flex;
-//   align-items: center;
-//   margin-left: 20px;
-// }
-
-// .username {
-//   margin-right: 10px;
-// }
 
 
 
@@ -88,11 +59,10 @@ nav ul li a:before{
 }
 /* hero section */
 .main{
-  display: flex;
   gap:5em
 }
 .left-col{
-  width: 45%;
+  width: 50%;
 }
 .right-col{
   flex-grow: 1;
@@ -153,7 +123,38 @@ p.details{
   margin: 0;
 }
 /* right column grid gallery  */
+header-lib{
+  .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
 
+.logo {
+  width: 80px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  margin-left: 10px;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.username {
+  margin-right: 10px;
+}
+}
 
 .card{
   display: flex;
@@ -195,8 +196,8 @@ nav ul li a:hover:before{
 }
 .fill-login-image{
   background-image: url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') ;
-  width: 75vw;
-  height: 75vh;
+  width: 100vw;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: 100vw;
 }
@@ -220,16 +221,19 @@ nav ul li a:hover:before{
   }
 }
 .login-form{
-  margin-left: 2rem;
-  width:450px;
+  margin-left: 40rem;
+  width: 30rem;
+  position: absolute;
   display: flex;
-  flex-direction: column;
   margin-top: 20em;
-  width: 14rem;
 }
 .main{
   animation: grawIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   transform: scale(.4);
+}
+h2{
+  margin-right: 30%;
+  margin-left: 20%;
 }
 @keyframes grawIn{
   to{

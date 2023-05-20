@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Critentials } from './model/credential.model';
 import { ResetPasswordReq } from './model/reset-password-req.model';
 import { LoginUserVM } from '../../../../vm/login-user.vm.model';
 import { mapLoginRequest } from './auth-mapper';
@@ -10,15 +9,16 @@ import { mapLoginRequest } from './auth-mapper';
 })
 export class AuthService {
   ///TODO need to optimized the functionality
-  constructor(private apiService:ApiService) {}
+  constructor(private apiService: ApiService) {}
 
   /**
    * login user with credentials
    * @param credentials
    * @returns
    */
-  login(credentials:Critentials){
-      return this.apiService.post('/auth',credentials)
+  login(credentials: LoginUserVM) {
+    mapLoginRequest(credentials);
+    return this.apiService.post('/auth');
   }
   /**
    * validate user token and login
@@ -26,8 +26,8 @@ export class AuthService {
    * @param token
    * @returns
    */
-  auth(userId:string,token:string){
-    return this.apiService.get(`/auth/${userId}/${token}`)
+  auth(userId: string, token: string) {
+    return this.apiService.get(`/auth/${userId}/${token}`);
   }
   /**
    * reset user password and will return defualt password
@@ -36,11 +36,19 @@ export class AuthService {
    * @param reason
    * @returns
    */
-  resetUser(userId:string ,adminCredentials:LoginUserVM,reason:string){
-    const resetReqest = {} as ResetPasswordReq
+  resetUser(userId: string, adminCredentials: LoginUserVM, reason: string) {
+    const resetReqest = {} as ResetPasswordReq;
     resetReqest.reason = reason;
-    resetReqest.superUser = mapLoginRequest(adminCredentials)
-    return this.apiService.post(`/reset/${userId}`,resetReqest)
+    resetReqest.superUser = mapLoginRequest(adminCredentials);
+    return this.apiService.post(`/reset/${userId}`, resetReqest);
   }
-
+  /**
+   * load user by context (according to  data need )
+   * @param userId
+   * @param context
+   * @returns
+   */
+  getAccount(userId:string,context:string){
+      return this.apiService.get(`/auth/${userId}/type/${context}`)
+  }
 }
