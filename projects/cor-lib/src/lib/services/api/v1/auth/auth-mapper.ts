@@ -1,4 +1,5 @@
-import { LoginUserVM } from "../../../../vm/login-user.vm.model";
+
+import { LoginUserVM } from "projects/cor-lib/src/vm/login-user.vm.model";
 import { Critentials } from "./model/credential.model";
 
 export function mapLoginRequest(param:LoginUserVM):Critentials{

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { AuthService } from 'cor-lib';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private authService:AuthService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -25,9 +27,7 @@ export class AuthGuard implements CanActivate {
   }
 
   private checkIfLoggedIn(): boolean {
-    // Add your own logic here to check if the user is logged in
-    // For example, you can check if there is a valid authentication token or session
-    // Return true if the user is logged in, or false if not
-    return false; // Replace with your own logic
+
+    return this.authService.getAuthorizedUser(); // Replace with your own logic
   }
 }

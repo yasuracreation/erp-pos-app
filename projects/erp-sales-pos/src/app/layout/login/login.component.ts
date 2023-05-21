@@ -1,7 +1,8 @@
 import { Component, OnInit ,NgModule} from '@angular/core';
-import { AuthService } from '../../core/services/api/v1/auth/auth.service';
 import { LoginUserVM } from '../../core/vm/login-user.vm.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'cor-lib';
 
 @Component({
   templateUrl: './login.component.html',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup | undefined;
   public submitted = false;
 
-  constructor(private authService:AuthService,private formBuilder: FormBuilder) { }
+  constructor(private authService:AuthService,private formBuilder: FormBuilder ,private router:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -36,7 +37,10 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if (this.loginForm && this.loginForm.valid) {
       this.user = this.loginForm.value
-       this.authService.login(this.user)
+       const resp = this.authService.login(this.user);
+       if(resp){
+        this.router.navigateByUrl('/dashboard')
+       }
     }
   }
   get formControl() {
@@ -44,7 +48,8 @@ export class LoginComponent implements OnInit {
   }
 
 
-  resetPassword(){
+  resetPassword()
+  {
       // TODO navigate user to reset password page
   }
 

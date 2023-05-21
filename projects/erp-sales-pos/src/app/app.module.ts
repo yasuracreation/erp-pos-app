@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './layout/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CorLibModule } from 'cor-lib';
 
 @NgModule({
   declarations: [AppComponent,LoginComponent],
-  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,FormsModule],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,FormsModule,CorLibModule],
   providers: [],
   bootstrap: [AppComponent]
 })

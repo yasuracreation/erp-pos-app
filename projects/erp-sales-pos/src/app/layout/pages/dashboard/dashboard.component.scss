@@ -1,0 +1,68 @@
+.dashboard-main {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  margin-top: 5em;
+
+}
+
+.side-nav {
+  margin-left: 3em;
+  width: 10rem;
+  background-color: bisque;
+  height: 70vh;
+}
+
+.product-selection {
+  flex-grow: 1;
+}
+
+.functionality-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em;
+}
+
+.option-wrapper {
+  width: 8rem;
+  height: 8rem;
+  background-color: aliceblue;
+  border-radius: 1em;
+  padding: 3em;
+}
+
+.option-wrapper.services {
+  background-color: red;
+}
+
+.product-selection {
+  background-color: blanchedalmond;
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  cursor: pointer;
+
+  .product-card {
+    transition: transform 1s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    img {
+      width: 100%;
+    }
+
+
+
+  }
+  .product-card {
+    background-color: aliceblue;
+    width: 8rem;
+    height: 8rem;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 20px;
+  }
+}

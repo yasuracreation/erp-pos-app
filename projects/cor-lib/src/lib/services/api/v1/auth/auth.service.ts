@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ResetPasswordReq } from './model/reset-password-req.model';
-import { LoginUserVM } from '../../../../vm/login-user.vm.model';
 import { mapLoginRequest } from './auth-mapper';
+import { LoginUserVM } from 'projects/cor-lib/src/vm/login-user.vm.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class AuthService {
    */
   login(credentials: LoginUserVM) {
     mapLoginRequest(credentials);
-    return this.apiService.post('/auth');
+    return true  // this.apiService.post('/auth');
   }
   /**
    * validate user token and login
@@ -50,5 +50,8 @@ export class AuthService {
    */
   getAccount(userId:string,context:string){
       return this.apiService.get(`/auth/${userId}/type/${context}`)
+  }
+  getAuthorizedUser():boolean{
+    return true;
   }
 }
